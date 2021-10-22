@@ -1,0 +1,19 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: terraform version
+  displayName: 'Get Terraform Version'
+- script: lsb_release -a
+  displayName: 'Get Ubuntu Version'
+- script: terragrunt version
+  displayName: 'Get terragrunt version'
+
